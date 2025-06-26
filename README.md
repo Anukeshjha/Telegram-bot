@@ -454,7 +454,7 @@
 20. collect staticfiles: `python manage.py collectstatic`
 21. Create a superuser: `python manage.py createsuperuser`
 username: admin
-email: anukeshjha197@gmail.com
+email: admim@gmail.com
 password: Admin@123
 
 ## Running the Project
