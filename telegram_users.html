@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Telegram Users</h2>
+    <div class="table-responsive">
+        {% if telegram_users %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>User</th>
+                    <th>Created At</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in telegram_users %}
+                <tr>
+                    <td>{{ user.telegram_username }}</td>
+                    <td>{{ user.user.username }}</td>
+                    <td>{{ user.created_at|date:"Y-m-d H:i" }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div class="alert alert-info">
+            No Telegram users found. Try sending /start to your bot first.
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

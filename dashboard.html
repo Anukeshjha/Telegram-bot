@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card mb-4">
+            <div class="card-header bg-success text-white">
+                <h4>Welcome, {{ user.username }}!</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <i class="fas fa-user fa-3x mb-3 text-primary"></i>
+                                <h5>Profile</h5>
+                                <p>Email: {{ user.email }}</p>
+                                <p>Last login: {{ user.last_login }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <i class="fas fa-cog fa-3x mb-3 text-warning"></i>
+                                <h5>Settings</h5>
+                                <a href="#" class="btn btn-sm btn-outline-secondary">Change Password</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <i class="fas fa-sign-out-alt fa-3x mb-3 text-danger"></i>
+                                <h5>Actions</h5>
+                                <a href="{% url 'logout' %}" class="btn btn-sm btn-danger">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
